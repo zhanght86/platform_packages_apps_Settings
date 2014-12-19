@@ -130,6 +130,12 @@
                 android:title="@string/rebindings_settings_title"
                 android:summary="@string/rebindings_settings_summary"/>
 
+         <PreferenceScreen
+                android:fragment="com.android.settings.jdc.fragments.TrafficSettings"
+                android:key="traffic_settings"
+                android:title="@string/network_traffic_title"
+                android:summary="@string/show_network_traffic_state"/>
+
          <ListPreference
                 android:entries="@array/ticker_mode_entries"
                 android:entryValues="@array/ticker_mode_values"

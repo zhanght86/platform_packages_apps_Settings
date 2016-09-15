@@ -385,7 +385,8 @@ public class SettingsActivity extends SettingsDrawerActivity
             ManageDomainUrls.class.getName(),
             AutomaticStorageManagerSettings.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
-            BatterySettings.class.getName()
+            BatterySettings.class.getName(),
+            LightsSettings.class.getName()
     };
 
 

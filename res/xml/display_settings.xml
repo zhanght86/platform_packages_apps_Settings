@@ -48,6 +48,13 @@
             android:entries="@array/night_mode_entries"
             android:entryValues="@array/night_mode_values" /> -->
 
+        <!-- Blur effect -->
+        <com.android.settings.preference.SystemSettingSwitchPreference
+                android:key="uiBlurEnabled"
+                android:title="@string/blur_effect_title"
+                android:summary="@string/blur_effect_summary"
+                android:defaultValue="false" />
+
         <com.android.settingslib.RestrictedPreference
                 android:key="wallpaper"
                 android:title="@string/wallpaper_settings_title"

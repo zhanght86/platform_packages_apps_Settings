@@ -318,4 +318,8 @@
     <!-- Device Maintainer -->
     <string name="device_maintainer">Device Maintainer</string>
     <string name="device_maintainer_default">Unofficial</string>
+
+    <!-- ANBI -->
+    <string name="anbi_title">Accidental touch</string>
+    <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
 </resources>

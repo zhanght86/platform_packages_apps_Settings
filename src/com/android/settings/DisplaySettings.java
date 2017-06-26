@@ -98,6 +98,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private TimeoutListPreference mScreenTimeoutPreference;
     private ListPreference mNightModePreference;
+    private ListPreference mShowTicker;
     private Preference mScreenSaverPreference;
     private PreferenceScreen mDozeDevicePreference;
     private SwitchPreference mLiftToWakePreference;
@@ -105,7 +106,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mTapToWakePreference;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
-    private SwitchPreference mShowTicker;
 
     @Override
     protected int getMetricsCategory() {
@@ -261,11 +261,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
 
-        mShowTicker = (SwitchPreference) findPreference(STATUS_BAR_SHOW_TICKER);
+        mShowTicker = (ListPreference) findPreference(STATUS_BAR_SHOW_TICKER);
         mShowTicker.setOnPreferenceChangeListener(this);
-        int ShowTicker = Settings.System.getInt(getContentResolver(),
-                STATUS_BAR_SHOW_TICKER, 0);
-        mShowTicker.setChecked(ShowTicker != 0);
+        int tickerMode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_TICKER,
+                0, UserHandle.USER_CURRENT);
+        mShowTicker.setValue(String.valueOf(tickerMode));
+        mShowTicker.setSummary(mShowTicker.getEntry());
     }
 
     private static boolean allowAllRotations(Context context) {
@@ -456,10 +458,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.e(TAG, "could not persist night mode setting", e);
             }
         }
-        if (preference == mShowTicker) {
-            boolean value = (Boolean) objValue;
-            Settings.Global.putInt(getContentResolver(), STATUS_BAR_SHOW_TICKER,
-                    value ? 1 : 0);
+        if (preference.equals(mShowTicker)) {
+            int tickerMode = Integer.parseInt(((String) objValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_TICKER, tickerMode,
+                    UserHandle.USER_CURRENT);
+            int index = mShowTicker.findIndexOfValue((String) objValue);
+            mShowTicker.setSummary(mShowTicker.getEntries()[index]);
         }
         return true;
     }

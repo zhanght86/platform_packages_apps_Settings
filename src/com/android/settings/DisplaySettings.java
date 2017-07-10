@@ -40,6 +40,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.DropDownPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
 import android.util.Log;
@@ -47,6 +48,7 @@ import android.util.Log;
 import com.android.internal.app.NightDisplayController;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.util.jdcteam.jdcUtils;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.accessibility.ToggleFontSizePreferenceFragment;
 import com.android.settings.dashboard.SummaryLoader;
@@ -81,6 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_LIFT_TO_WAKE = "lift_to_wake";
     private static final String KEY_DOZE = "doze";
+    private static final String KEY_DOZE_DEVICE = "doze_device";
     private static final String KEY_TAP_TO_WAKE = "tap_to_wake";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
@@ -89,12 +92,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_CAMERA_GESTURE = "camera_gesture";
     private static final String KEY_WALLPAPER = "wallpaper";
     private static final String KEY_VR_DISPLAY_PREF = "vr_display_pref";
+    private static final String STATUS_BAR_SHOW_TICKER = "status_bar_show_ticker";
 
     private Preference mFontSizePref;
 
     private TimeoutListPreference mScreenTimeoutPreference;
     private ListPreference mNightModePreference;
+    private ListPreference mShowTicker;
     private Preference mScreenSaverPreference;
+    private PreferenceScreen mDozeDevicePreference;
     private SwitchPreference mLiftToWakePreference;
     private SwitchPreference mDozePreference;
     private SwitchPreference mTapToWakePreference;
@@ -111,6 +117,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         final Activity activity = getActivity();
         final ContentResolver resolver = activity.getContentResolver();
+        final boolean isDeviceDozeInstalled = jdcUtils.isPackageInstalled(activity, "com.cyanogenmod.settings.doze");
 
         addPreferencesFromResource(R.xml.display_settings);
 
@@ -143,10 +150,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             removePreference(KEY_LIFT_TO_WAKE);
         }
 
-        if (isDozeAvailable(activity)) {
-            removePreference(KEY_DOZE);
+        if (isDozeAvailable(activity) && !isDeviceDozeInstalled) {
+            mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
+            mDozePreference.setOnPreferenceChangeListener(this);
         } else {
             removePreference(KEY_DOZE);
+        }
+
+        if (isDeviceDozeInstalled) {
+            mDozeDevicePreference = (PreferenceScreen) findPreference(KEY_DOZE_DEVICE);
+            mDozeDevicePreference.setOnPreferenceChangeListener(this);
+        } else {
+            removePreference(KEY_DOZE_DEVICE);
         }
 
         if (isTapToWakeAvailable(getResources())) {
@@ -245,6 +260,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
+
+        mShowTicker = (ListPreference) findPreference(STATUS_BAR_SHOW_TICKER);
+        mShowTicker.setOnPreferenceChangeListener(this);
+        int tickerMode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_TICKER,
+                0, UserHandle.USER_CURRENT);
+        mShowTicker.setValue(String.valueOf(tickerMode));
+        mShowTicker.setSummary(mShowTicker.getEntry());
     }
 
     private static boolean allowAllRotations(Context context) {
@@ -434,6 +457,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist night mode setting", e);
             }
+        }
+        if (preference.equals(mShowTicker)) {
+            int tickerMode = Integer.parseInt(((String) objValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_TICKER, tickerMode,
+                    UserHandle.USER_CURRENT);
+            int index = mShowTicker.findIndexOfValue((String) objValue);
+            mShowTicker.setSummary(mShowTicker.getEntries()[index]);
         }
         return true;
     }

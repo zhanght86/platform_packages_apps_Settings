@@ -84,6 +84,13 @@
                 android:title="@string/doze_title"
                 android:summary="@string/doze_summary" />
 
+        <PreferenceScreen
+                android:key="doze_device"
+                android:title="@string/op_doze_title"
+                android:summary="@string/op_doze_summary" >
+                <intent android:action="org.cyanogenmod.settings.device.DOZE_SETTINGS" />
+        </PreferenceScreen>
+
         <SwitchPreference
                 android:key="tap_to_wake"
                 android:title="@string/tap_to_wake"
@@ -123,13 +130,27 @@
                 android:title="@string/rebindings_settings_title"
                 android:summary="@string/rebindings_settings_summary"/>
 
-        <PreferenceScreen
+         <ListPreference
+                android:entries="@array/ticker_mode_entries"
+                android:entryValues="@array/ticker_mode_values"
+                android:key="status_bar_show_ticker"
+                android:summary="%s"
+                android:title="@string/ticker_title" />
+
+         <!-- Heads up -->
+         <com.android.settings.preference.GlobalSettingSwitchPreference
+                android:key="heads_up_notifications_enabled"
+                android:title="@string/heads_up_notifications"
+                android:summaryOn="@string/summary_heads_up_enabled"
+                android:summaryOff="@string/summary_heads_up_disabled" />
+
+         <PreferenceScreen
                 android:key="wifi_display"
                 android:title="@string/wifi_display_settings_title"
                 settings:keywords="@string/keywords_display_cast_screen"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
-        <DropDownPreference
+         <DropDownPreference
                 android:key="vr_display_pref"
                 android:summary="%s"
                 android:title="@string/display_vr_pref_title" />

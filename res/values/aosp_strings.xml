@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 AOSiP
+     Copyright (C) 2017 The JDCTeam
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -202,10 +202,6 @@
     <string name="wifi_setting_countrycode_summary">Specify the region code for Wi\u2011Fi</string>
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_error">There was a problem setting the region code.</string>
-
-    <!-- Device Specific Doze -->
-    <string name="op_doze_title">Doze</string>
-    <string name="op_doze_summary">Control ambient display for your device</string>
 
     <!-- Status bar notification ticker -->
     <string name="ticker_title">Ticker</string>

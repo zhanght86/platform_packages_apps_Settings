@@ -212,4 +212,3 @@ public class TrafficSettings extends SettingsPreferenceFragment implements
         return (intNumber & intMask) == intMask;
     }
 }
-

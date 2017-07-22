@@ -188,7 +188,7 @@ public class NotificationLightPreference extends Preference implements DialogInt
 
     public Dialog getDialog() {
         final NotificationLightDialog d = new NotificationLightDialog(getContext(),
-                0xFF000000 + mColorValue, mOnValue, mOffValue, mOnOffChangeable); 
+                0xFF000000 + mColorValue, mOnValue, mOffValue, mOnOffChangeable);
 
         d.setButton(AlertDialog.BUTTON_POSITIVE, mResources.getString(R.string.ok),
                 new DialogInterface.OnClickListener() {

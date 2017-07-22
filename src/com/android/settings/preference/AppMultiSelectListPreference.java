@@ -217,4 +217,3 @@ public class AppMultiSelectListPreference extends DialogPreference {
         }
     };
 }
-

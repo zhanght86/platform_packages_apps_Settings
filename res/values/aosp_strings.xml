@@ -315,4 +315,7 @@
     <string name="network_traffic_hidearrow">Hide arrows</string>
     <string name="network_traffic_hidearrow_summary">Hide the arrows in the traffic indicators</string>
 
+    <!-- Device Maintainer -->
+    <string name="device_maintainer">Device Maintainer</string>
+    <string name="device_maintainer_default">Unofficial</string>
 </resources>

@@ -176,6 +176,12 @@
                 settings:allowDividerAbove="true"
                 settings:allowDividerBelow="true"/>
 
+         <!-- Device Maintainer -->
+        <Preference android:key="device_maintainer"
+            style="?android:preferenceInformationStyle"
+            android:title="@string/device_maintainer"
+            android:summary="@string/device_maintainer_default" />
+
         <!-- JDCTeam Google+ Community shortcut -->
         <Preference android:key="community"
             android:title="@string/community"

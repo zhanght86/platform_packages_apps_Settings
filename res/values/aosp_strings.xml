@@ -325,5 +325,5 @@
 
     <!-- Enable/Disable Blur effect -->
     <string name="blur_effect_title">Enable/Disable Blur effect</string>
-    <string name="blur_effect_summary">Allows user to enable or disable blur effect on the lockscreen (Requires a Reboot)</string>
+    <string name="blur_effect_summary">Allows user to enable or disable blur effect on the lockscreen</string>
 </resources>

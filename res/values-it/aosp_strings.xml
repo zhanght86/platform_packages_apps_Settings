@@ -152,8 +152,8 @@
     <string name="sim_enabler_need_disable_sim">La SIM card verrà disattivata. Desiderate continuare?</string>
     <string name="sim_enabler_will_disable_sim_title">Attenzione</string>
     <string name="sim_enabler_need_switch_data_service">Questa SIM verrà disattivata e la SIM <xliff:g id="slotid">%1$s</xliff:g> verrà utilizzata per il servizio dati. Siete sicuri di voler continuare?</string>
-    <string name="sim_enabler_airplane_on">Impossibile completare l'operazione finchè la modalità aereo è attiva.</string>
-    <string name="sim_enabler_in_call">Impossibile completare l'operazione finchè la chiamata è attiva.</string>
+    <string name="sim_enabler_airplane_on">Impossibile completare l\'operazione finchè la modalità aereo è attiva.</string>
+    <string name="sim_enabler_in_call">Impossibile completare l\'operazione finchè la chiamata è attiva.</string>
     <string name="sim_enabler_both_inactive">Impossibile disabilitare tutte le SIM cards</string>
     <string name="sim_enabler_enabling">Attivazione\u2026</string>
     <string name="sim_enabler_disabling">Disattivazione\u2026</string>
@@ -201,7 +201,7 @@
     <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
     <string name="wifi_setting_countrycode_summary">Specificare il codice regione per il Wi\u2011Fi</string>
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
-    <string name="wifi_setting_countrycode_error">C\'è stato un problema sull'impostazione del codice regione.</string>
+    <string name="wifi_setting_countrycode_error">C\'è stato un problema sull\'impostazione del codice regione.</string>
 	
     <!-- Status bar notification ticker -->
     <string name="ticker_title">Notifiche ridotte</string>

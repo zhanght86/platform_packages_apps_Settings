@@ -76,7 +76,7 @@
     <!-- Power menu customization -->
     <string name="power_menu_reboot_title">Menù riavvio</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
-    <string name="power_menu_screenrecord_title">Registra Screen</string>
+    <string name="power_menu_screenrecord_title">Registra Schermo</string>
     <string name="power_menu_torch_title">Torcia</string>
     <string name="power_menu_airplane_title">Modalità aereo</string>
     <string name="power_menu_users_title">Cambio utente</string>
@@ -163,9 +163,9 @@
     <string name="sub_deactivate_failed">Disattivazione fallita.</string>
 
     <!-- Linked / unlinked notification volume -->
-    <string name="link_volume_option_title">Collega volume suoneria e notifica</string>
-    <string name="notification_volume_option_title">Volume notifica</string>
-    <string name="ring_notification_volume_option_title">Volume suoneria e notifica</string>
+    <string name="link_volume_option_title">Collega volume suoneria e notifiche</string>
+    <string name="notification_volume_option_title">Volume notifiche</string>
+    <string name="ring_notification_volume_option_title">Volume suoneria e notifiche</string>
 
     <!-- Advanced night mode brightness -->
     <string name="night_brightness_category">Luminosità</string>
@@ -190,7 +190,7 @@
     <!-- Battery percentage options -->
     <string name="status_bar_battery_percentage_title">Mostra percentuale batteria</string>
     <string name="status_bar_battery_percentage_default">Nascosta</string>
-    <string name="status_bar_battery_percentage_text_inside">Interna all\'icona</string>
+    <string name="status_bar_battery_percentage_text_inside">Dentro all\'icona</string>
     <string name="status_bar_battery_percentage_text_next">Vicino all\'icona</string>
 
     <!-- Battery tuner -->
@@ -282,9 +282,9 @@
     <!-- Battery light settings  -->
     <string name="batterylight_title">Impostazioni LED batteria</string>
     <string name="battery_light_enable">Abilita</string>
-    <string name="battery_low_pulse_title">Pulsa se la batteria è bassa</string>
+    <string name="battery_low_pulse_title">Pulsa se il livello batteria è basso</string>
     <string name="battery_light_list_title">Colori</string>
-    <string name="battery_light_low_color_title">Batteria bassa</string>
+    <string name="battery_light_low_color_title">Batteria scarica</string>
     <string name="battery_light_medium_color_title">In carica</string>
     <string name="battery_light_full_color_title">Carica (90%)</string>
     <string name="battery_light_really_full_color_title">Carica (100%)</string>

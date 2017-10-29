@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2017 The JDCTeam
 
@@ -15,6 +15,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- MSIM SIM status -->
+    <string name="sim_card_status_title">Stato SIM %d</string>
+    <string name="sim_card_lock_settings_title">Impostazioni blocco SIM %d</string>
+    <string name="sim_card_summary_empty">SIM non inserita</string>
+    <string name="sim_mobile_network_settings_category_title">Impostazioni rete mobile</string>
+    <string name="sim_mobile_network_settings_title">Impostazioni SIM %d</string>
+
     <!-- Change Log strings -->
     <string name="changelog_title">Changelog</string>
     <string name="changelog_summary">AOSP 7.1.2 changelog</string>
@@ -69,7 +76,7 @@
     <!-- Power menu customization -->
     <string name="power_menu_reboot_title">Menù riavvio</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
-    <string name="power_menu_screenrecord_title">Registra Schermo</string>
+    <string name="power_menu_screenrecord_title">Registra Screen</string>
     <string name="power_menu_torch_title">Torcia</string>
     <string name="power_menu_airplane_title">Modalità aereo</string>
     <string name="power_menu_users_title">Cambio utente</string>
@@ -108,6 +115,15 @@
     <!-- Phone info shortcut -->
     <string name="device_info_title">Informazioni telefono</string>
 
+    <!-- Format string for fingerprint location message -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_cm">Posizione del lettore impronte sul <xliff:g id="sensor_location">%1$s</xliff:g> del tuo telefono.</string>
+
+    <!-- Fingerprint sensor locations -->
+    <string name="security_settings_fingerprint_sensor_location_back">retro</string>
+    <string name="security_settings_fingerprint_sensor_location_front">fronte</string>
+    <string name="security_settings_fingerprint_sensor_location_left">lato sinistro</string>
+    <string name="security_settings_fingerprint_sensor_location_right">lato destro</string>
+
     <!-- Key backlight -->
     <string name="button_backlight_title">Backlight tasti</string>
     <string name="button_backlight_enabled">Illuminazione tasti</string>
@@ -121,10 +137,35 @@
     <string name="backlight_summary_enabled">Abilitata</string>
     <string name="settings_reset_button">Reimposta</string>
 
+    <!-- Kill app long-press back -->
+    <string name="kill_app_longpress_back">Chiudi app con pulsante indietro</string>
+    <string name="kill_app_longpress_back_summary">Chiudere l\'app in primo piano tramite la pressione prolungata del pulsante indietro</string>
+
+    <!-- Gesture Settings -->
+    <!-- Summary text for double twist for camera mode  [CHAR LIMIT=160]-->
+    <string name="double_twist_for_camera_mode_summary_pn">Per abilitare/disabilitare la modalità selfie in Google Camera, eseguire un doppio twist con l\'app aperta</string>
+
+    <string name="sim_enabler_summary"><xliff:g id="displayName">%1$s</xliff:g> è <xliff:g id="status" example="disabled">%2$s</xliff:g></string>
+    <string name="sim_enabled">abilitata</string>
+    <string name="sim_disabled">disabilitata</string>
+    <string name="sim_missing">assente o danneggiata</string>
+    <string name="sim_enabler_need_disable_sim">La SIM card verrà disattivata. Desiderate continuare?</string>
+    <string name="sim_enabler_will_disable_sim_title">Attenzione</string>
+    <string name="sim_enabler_need_switch_data_service">Questa SIM verrà disattivata e la SIM <xliff:g id="slotid">%1$s</xliff:g> verrà utilizzata per il servizio dati. Siete sicuri di voler continuare?</string>
+    <string name="sim_enabler_airplane_on">Impossibile completare l'operazione finchè la modalità aereo è attiva.</string>
+    <string name="sim_enabler_in_call">Impossibile completare l'operazione finchè la chiamata è attiva.</string>
+    <string name="sim_enabler_both_inactive">Impossibile disabilitare tutte le SIM cards</string>
+    <string name="sim_enabler_enabling">Attivazione\u2026</string>
+    <string name="sim_enabler_disabling">Disattivazione\u2026</string>
+    <string name="sub_activate_success">SIM attivata.</string>
+    <string name="sub_activate_failed">Attivazione fallita.</string>
+    <string name="sub_deactivate_success">SIM disattivata.</string>
+    <string name="sub_deactivate_failed">Disattivazione fallita.</string>
+
     <!-- Linked / unlinked notification volume -->
-    <string name="link_volume_option_title">Collega volume suoneria e notifiche</string>
-    <string name="notification_volume_option_title">Volume notifiche</string>
-    <string name="ring_notification_volume_option_title">Volume suoneria e notifiche</string>
+    <string name="link_volume_option_title">Collega volume suoneria e notifica</string>
+    <string name="notification_volume_option_title">Volume notifica</string>
+    <string name="ring_notification_volume_option_title">Volume suoneria e notifica</string>
 
     <!-- Advanced night mode brightness -->
     <string name="night_brightness_category">Luminosità</string>
@@ -143,14 +184,146 @@
     <string name="status_bar_battery_style_icon_portrait">Icona verticale</string>
     <string name="status_bar_battery_style_icon_landscape">Icona orizzontale</string>
     <string name="status_bar_battery_style_circle">Cerchio</string>
+	    <string name="status_bar_battery_style_solid">Cerchio pieno</string>
     <string name="status_bar_battery_style_text">Testo</string>
     <string name="status_bar_battery_style_hidden">Nascosta</string>
     <!-- Battery percentage options -->
     <string name="status_bar_battery_percentage_title">Mostra percentuale batteria</string>
     <string name="status_bar_battery_percentage_default">Nascosta</string>
-    <string name="status_bar_battery_percentage_text_inside">Dentro all\'icona</string>
+    <string name="status_bar_battery_percentage_text_inside">Interna all\'icona</string>
     <string name="status_bar_battery_percentage_text_next">Vicino all\'icona</string>
 
     <!-- Battery tuner -->
     <string name="battery_title">Tuner batteria</string>
+
+    <!-- Wi-Fi region code -->
+    <string name="wifi_setting_countrycode_title">Codice regione Wi\u2011Fi</string>
+    <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
+    <string name="wifi_setting_countrycode_summary">Specificare il codice regione per il Wi\u2011Fi</string>
+    <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
+    <string name="wifi_setting_countrycode_error">C\'è stato un problema sull'impostazione del codice regione.</string>
+	
+    <!-- Status bar notification ticker -->
+    <string name="ticker_title">Notifiche ridotte</string>
+    <string name="ticker_summary">Abilita le notifiche ridotte nella barra di stato. Non utilizzare contemporaneamente con quelle Pop-up.</string>
+    <string name="ticker_disabled">Disabilita notifiche ridotte</string>
+    <string name="ticker_enabled">Abilita notifiche ridotte</string>
+    <string name="ticker_media_enabled">Abilita notifiche e musica ridotte</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_notifications">Notifiche Pop-up</string>
+    <string name="summary_heads_up_enabled">Notifiche Pop-up abilitate</string>
+    <string name="summary_heads_up_disabled">Notifiche Pop-up disabilitate</string>
+
+    <!-- Lights Settings  -->
+    <string name="lights_settings">Luci LED</string>
+    <string name="lights_dashboard_summary">Controllo opzioni led di notifica e batteria</string>
+
+    <!-- General -->
+    <string name="ok">Ok</string>
+    <string name="reset">Reset</string>
+    <string name="default_string">Default</string>
+    <string name="add">Aggiungi</string>
+    <string name="enabled">Abilitato</string>
+    <string name="choose_app">Scelta applicazione</string>
+    <string name="help">Aiuto</string>
+    <string name="reset_message">Ripristina tutte le impostazioni a default?</string>
+    <string name="attention">Attenzione</string>
+    <string name="reset">Reset</string>
+    <string name="advanced">Avanzate</string>
+    <string name="profiles_add">Aggiungi...</string>
+    <string name="profile_choose_app">Scelta app</string>
+
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">Modifica impostazioni luci</string>
+    <string name="pulse_speed_title">Lunghezza impulso e velocità</string>
+    <string name="default_time">Normale</string>
+    <string name="custom_time">Personalizzato</string>
+    <string name="dialog_delete_title">Elimina</string>
+    <string name="dialog_delete_message">Eliminare l\'elemento selezionato?</string>
+
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Sempre attivo</string>
+    <string name="pulse_length_very_short">Molto breve</string>
+    <string name="pulse_length_short">Breve</string>
+    <string name="pulse_length_normal">Normale</string>
+    <string name="pulse_length_long">Lungo</string>
+    <string name="pulse_length_very_long">Molto lungo</string>
+    <string name="pulse_speed_very_fast">Molto veloce</string>
+    <string name="pulse_speed_fast">Veloce</string>
+    <string name="pulse_speed_normal">Normale</string>
+    <string name="pulse_speed_slow">Lento</string>
+    <string name="pulse_speed_very_slow">Molto lento</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Luci di notifica</string>
+    <string name="notificationlight_title">Impostazioni LED notifica</string>
+    <string name="notification_light_general_title">Generale</string>
+    <string name="notification_light_applist_title">Apps</string>
+    <string name="notification_light_phonelist_title">Telefono</string>
+    <string name="notification_light_use_custom">Utilizzare valori personalizzati</string>
+    <string name="notification_light_default_value">Default</string>
+    <string name="notification_light_missed_call_title">Chiamate perse</string>
+    <string name="notification_light_voicemail_title">Voicemail</string>
+    <string name="notification_light_brightness" translatable="false">@string/brightness</string>
+    <string name="notification_light_screen_on">Luci con schermo acceso</string>
+    <string name="notification_light_zen_mode">Luci in modalità Non Disturbare</string>
+    <string name="notification_light_use_multiple_leds">LED multipli</string>
+    <string name="keywords_lights_brightness_level">Livello luminosità LED</string>
+    <string name="notification_light_automagic">Colore Automatico</string>
+    <string name="notification_light_automagic_summary">Imposta automaticamente il colore appropriato per le notifiche led se l\'app non ha valori personalizzati</string>
+
+    <!-- Lights settings, LED notification -->
+    <string name="leds_category_title">Opzioni LED</string>
+    <string name="battery_light_settings">Luci batteria</string>
+    <string name="led_notification_title">Impostazioni luci</string>
+    <string name="led_notification_text">Luci LED abilitate dalle impostazioni</string>
+    <string name="notification_light_no_apps_summary">Per aggiungere il controllo per app, attivare \'%1$s\' e premere \'\u002b\' sulla barra menu</string>
+
+    <!-- Battery light settings  -->
+    <string name="batterylight_title">Impostazioni LED batteria</string>
+    <string name="battery_light_enable">Abilita</string>
+    <string name="battery_low_pulse_title">Pulsa se la batteria è bassa</string>
+    <string name="battery_light_list_title">Colori</string>
+    <string name="battery_light_low_color_title">Batteria bassa</string>
+    <string name="battery_light_medium_color_title">In carica</string>
+    <string name="battery_light_full_color_title">Carica (90%)</string>
+    <string name="battery_light_really_full_color_title">Carica (100%)</string>
+    <string name="edit_battery_settings">Modifica impostazioni batteria</string>
+    <string name="notification_light_general_title">Generale</string>
+    <string name="led_color_green">Verde</string>
+    <string name="led_color_red">Rosso</string>
+    <string name="led_color_blue">Blu</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_title">Traffico rete</string>
+    <string name="show_network_traffic_state">Monitor traffico sulla barra di stato</string>
+    <string name="show_network_traffic_unit">Unità visualizzata</string>
+    <string name="show_network_traffic_frequency">Intervallo di aggiornamento</string>
+    <string name="show_network_traffic_disable">Disabilitato</string>
+    <string name="show_network_traffic_up">In uscita</string>
+    <string name="show_network_traffic_down">In ingresso</string>
+    <string name="show_network_traffic_all">In uscita ed in ingresso</string>
+    <string name="show_network_traffic_bit">Bit al secondo</string>
+    <string name="show_network_traffic_byte">Byte al secondo</string>
+    <string name="show_network_traffic_500">500 ms</string>
+    <string name="show_network_traffic_1000">1000 ms</string>
+    <string name="show_network_traffic_1500">1500 ms</string>
+    <string name="show_network_traffic_2000">2000 ms</string>
+    <string name="network_traffic_autohide">Nascondi automaticamente</string>
+    <string name="network_traffic_autohide_summary">Nascondi il traffico rete quando non c\'è attività</string>
+    <string name="network_traffic_autohide_threshold">Soglia di inattività</string>
+    <string name="network_traffic_hidearrow">Nascondi frecce</string>
+    <string name="network_traffic_hidearrow_summary">Nascondere le frecce negli indicatori del traffico</string>
+
+    <!-- Device Maintainer -->
+    <string name="device_maintainer">Device Maintainer</string>
+    <string name="device_maintainer_default">Unofficial</string>
+
+    <!-- ANBI -->
+    <string name="anbi_title">Tocco accidentale</string>
+    <string name="anbi_summary">Previene interazione con i pulsanti di navigazione finchè lo schermo viene toccato</string>
+
+    <!-- Enable/Disable Blur effect -->
+    <string name="blur_effect_title">Abilita/Disabilita effetto Blur</string>
+    <string name="blur_effect_summary">Permette di abilitare o disabilitare l\'effetto Blur sulla schermata di blocco</string>
 </resources>

@@ -237,8 +237,6 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final String ACTION_TIMER_SWITCH = "qualcomm.intent.action.TIMER_SWITCH";
 
-    private static final String STWEAKS_FRAGMENT = "com.android.settings.STweaks";
-
     private static final String MAGISK_FRAGMENT = "com.android.settings.MagiskManager";
 
     private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
@@ -1062,13 +1060,6 @@ public class SettingsActivity extends SettingsDrawerActivity
     private Fragment switchToFragment(String fragmentName, Bundle args, boolean validate,
             boolean addToBackStack, int titleResId, CharSequence title, boolean withTransition) {
 
-        if (STWEAKS_FRAGMENT.equals(fragmentName)) {
-            Intent stweaksIntent = new Intent();
-            stweaksIntent.setClassName("com.gokhanmoral.stweaks.app", "com.gokhanmoral.stweaks.app.MainActivity");
-            startActivity(stweaksIntent);
-            finish();
-            return null;
-        }
         if (MAGISK_FRAGMENT.equals(fragmentName)) {
             Intent magiskIntent = new Intent();
             magiskIntent.setClassName("com.topjohnwu.magisk", "com.topjohnwu.magisk.SplashActivity");
@@ -1196,16 +1187,6 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                         Settings.DevelopmentSettingsActivity.class.getName()),
                 showDev, isAdmin, pm);
-
-        // STweaks
-        boolean stweaksSupported = false;
-        try {
-            stweaksSupported = (getPackageManager().getPackageInfo("com.gokhanmoral.stweaks.app", 0).versionCode > 0);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.STweaksActivity.class.getName()),
-                stweaksSupported, isAdmin, pm);
 
         // Magisk Manager
         boolean magiskSupported = false;

@@ -245,8 +245,6 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final String SUBSTRATUM_FRAGMENT = "com.android.settings.Substratum";
 
-    private static final String TOOLBOX_FRAGMENT = "com.android.settings.Toolbox";
-
     private String mFragmentClass;
     private String mActivityAction;
 
@@ -1088,13 +1086,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             finish();
             return null;
         }
-        if (TOOLBOX_FRAGMENT.equals(fragmentName)) {
-            Intent subIntent = new Intent();
-            subIntent.setClassName("com.jdcteam.toolbox", "com.jdcteam.toolbox.ToolboxMain");
-            startActivity(subIntent);
-            finish();
-            return null;
-        }
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
                     + fragmentName);
@@ -1217,16 +1208,6 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                         Settings.SuperSUActivity.class.getName()),
                 suSupported, isAdmin, pm);
-
-        // Toolbox
-        boolean toolboxSupported = false;
-        try {
-            toolboxSupported = (getPackageManager().getPackageInfo("com.jdcteam.toolbox", 0).versionCode >= 0);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.ToolboxActivity.class.getName()),
-                toolboxSupported, isAdmin, pm);
 
         // SuperUser
         boolean phhSupported = false;
